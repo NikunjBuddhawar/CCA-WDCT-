@@ -39,18 +39,18 @@
 
         function searchMovie() {
             const searchTerm = document.querySelector('.search-input').value;
-            const omdbApiKey = '72b882da'; // Replace this with your OMDB API key
+            const omdbApiKey = '72b882da'; 
             const omdbUrl = `http://www.omdbapi.com/?apikey=${omdbApiKey}&t=${searchTerm}`;
     
-            // Make an AJAX request to OMDB API
+            
             fetch(omdbUrl)
                 .then(response => response.json())
                 .then(data => {
-                    // Check if the response has an error
+                    
                     if (data.Response === "False") {
                         alert(data.Error);
                     } else {
-                        // Display movie details
+                
                         showMovieDetails(data);
                     }
                 })
@@ -61,18 +61,18 @@
         }
         function searchGenre() {
             const selectedGenre = document.querySelector('.dropdown select').value;
-            const omdbApiKey = '72b882da'; // Replace this with your OMDB API key
+            const omdbApiKey = '72b882da'; 
             const omdbUrl = `http://www.omdbapi.com/?apikey=${omdbApiKey}&type=movie&s=${selectedGenre}&page=1&limit=15`;
     
-            // Make an AJAX request to OMDB API
+            
             fetch(omdbUrl)
                 .then(response => response.json())
                 .then(data => {
-                    // Check if the response has an error
+                    
                     if (data.Response === "False") {
                         alert(data.Error);
                     } else {
-                        // Display movies by genre
+                        
                         showMoviesByGenre(data);
                     }
                 })
